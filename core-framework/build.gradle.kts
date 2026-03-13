@@ -67,4 +67,9 @@ dependencies {
     api(libs.okhttp.core)
     api(libs.okhttp.logging)
     api(libs.kotlinx.serialization.json)
+
+    //测试相关
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
 }

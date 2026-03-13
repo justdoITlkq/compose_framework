@@ -1,5 +1,0 @@
-<resources>
-    <style name="Theme.Compose_framework" parent="android:ThemeOverlay.Material.Dark.ActionBar">
-        <item name="android:statusBarColor">@android:color/transparent</item>
-    </style>
-</resources>

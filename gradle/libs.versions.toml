@@ -1,6 +1,7 @@
 [versions]
 agp = "8.7.3"
 kotlin = "2.0.0"
+compose_framework = "0.0.2-SNAPSHOT"
 coreKtx = "1.15.0"
 junit = "4.13.2"
 junitVersion = "1.3.0"
@@ -23,6 +24,7 @@ kotlinx-serialization = "1.6.3"
 # 核心基本库
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+compose_framework = { module = "com.github.justdoITlkq:compose_framework", version.ref = "compose_framework" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 
 # Compose体系

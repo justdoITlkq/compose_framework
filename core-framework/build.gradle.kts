@@ -42,9 +42,9 @@ android {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            groupId = "com.cecbrain.android"
-            artifactId = "core-framework"
-            version = "1.0.0"
+            groupId = "com.cecbrain"
+            artifactId = libs.versions.compose.framework.get()
+            version = "0.0.2-SNAPSHOT"
 
             // 关联 Android 变体
             afterEvaluate {

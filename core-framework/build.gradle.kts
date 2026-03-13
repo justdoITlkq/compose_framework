@@ -19,17 +19,14 @@ android {
     buildFeatures { compose = true }
 
     compileOptions {
-        // 建议统一到 Java 17 或 21（取决于你的 Android Studio 版本）
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
 
     kotlinOptions {
-        // 这里的版本必须和上面一致
         jvmTarget = "17"
     }
 
-    // 如果你使用的是最新的 Kotlin 插件，建议也配置一下编译链
     kotlin {
         jvmToolchain(17)
     }
@@ -45,7 +42,6 @@ android {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            // 设置你的库坐标
             groupId = "com.cecbrain.android"
             artifactId = "core-framework"
             version = "1.0.0"
@@ -71,4 +67,5 @@ dependencies {
     api(libs.okhttp.core)
     api(libs.okhttp.logging)
     api(libs.kotlinx.serialization.json)
+    implementation(libs.compose.framework)
 }

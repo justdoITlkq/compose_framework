@@ -26,7 +26,7 @@ fun DefaultLoadingView() {
 }
 
 @Composable
-fun ErrorView(error: BaseException?, onRetry: () -> Unit) {
+fun DefaultErrorView(error: BaseException?, onRetry: () -> Unit) {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             Text(text = error?.msg ?: "发生未知错误")
@@ -37,7 +37,7 @@ fun ErrorView(error: BaseException?, onRetry: () -> Unit) {
 }
 
 @Composable
-fun EmptyView() {
+fun DefaultEmptyView() {
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
         Text(text = "这里空空如也~")
     }

@@ -1,3 +1,4 @@
+[![](https://jitpack.io/v/justdoITlkq/compose_framework.svg)](https://jitpack.io/#justdoITlkq/compose_framework)
 # Compose MVI 开发框架
 
 本项目提供了一套基于 Jetpack Compose 的 MVI 架构开发模板，通过 BaseViewModel 与 BaseScreen 的联动，实现

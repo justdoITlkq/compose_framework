@@ -1,8 +1,8 @@
 package com.cecbrain.core_framework.base
 
-enum class PageStatus {
-    LOADING, //加载中
-    CONTENT, //显示内容
-    ERROR, //页面错误
-    EMPTY //显示空页面
+sealed interface PageStatus {
+    data object Loading : PageStatus
+    data object Empty : PageStatus
+    data object Success : PageStatus
+    data class Error(val msg: String) : PageStatus
 }

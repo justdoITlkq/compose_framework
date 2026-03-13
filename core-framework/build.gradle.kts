@@ -67,5 +67,4 @@ dependencies {
     api(libs.okhttp.core)
     api(libs.okhttp.logging)
     api(libs.kotlinx.serialization.json)
-    implementation(libs.compose.framework)
 }

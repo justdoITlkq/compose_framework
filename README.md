@@ -1,7 +1,7 @@
 [![](https://jitpack.io/v/justdoITlkq/compose_framework.svg)](https://jitpack.io/#justdoITlkq/compose_framework)
 # Compose MVI 开发框架
 
-本项目提供了一套基于 Jetpack Compose 的 MVI 架构开发模板，通过 BaseViewModel 与 BaseScreen 的联动，实现
+本项目提供了一套基于 Jetpack Compose 的 MVI 架构开发模板，通过 BaseViewModel 与 State的联动，实现
 UI 状态自动管理。
 
 ---
@@ -79,7 +79,7 @@ class TodoViewModel @Inject constructor() : BaseViewModel<TodoState, TodoIntent,
                 }
             }
 
-            TodoIntent.FetchTodoList -> {
+            is TodoIntent.FetchTodoList -> {
                 fetchTodoList()
             }
         }
@@ -124,7 +124,7 @@ class TodoViewModel @Inject constructor() : BaseViewModel<TodoState, TodoIntent,
 
 ### 第二步：实现逻辑层 (ViewModel)
 
-继承 BaseViewModel，使用内置的 request 方法发起网络请求。
+继承 BaseViewModel，通过 handleIntent 方法处理 Intent，并更新 State。
 
 ```kotlin
 @HiltViewModel
@@ -215,7 +215,7 @@ class TodoViewModel @Inject constructor() : BaseViewModel<TodoState, TodoIntent,
 
 ### 第三步：构建 UI 层 (Compose Screen)
 
-使用 BaseScreen 装饰你的布局。
+使用 UIState动态改变布局。
 
 ```kotlin
 @Composable
@@ -322,7 +322,7 @@ fun TodoRow(item: TodoItem, onToggle: () -> Unit, onDelete: () -> Unit) {
 
 ```kotlin
 dependencies {
-    implementation("com.github.justdoITlkq/compose_framework:0.0.2-SNAPSHOT")
+    implementation("com.github.justdoITlkq:compose_framework:v0.0.2-SNAPSHOT")
 }
 ```
 
@@ -330,6 +330,5 @@ dependencies {
 
 BaseViewModel: 提供 request 方法，自动分发网络错误。
 
-BaseScreen: 顶层容器，内置了全屏加载、错误重试逻辑。
 
 IUiState: 标记接口，所有页面的 State 类必须实现。

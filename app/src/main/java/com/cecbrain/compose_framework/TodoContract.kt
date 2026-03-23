@@ -1,9 +1,10 @@
 package com.cecbrain.compose_framework
 
-import com.cecbrain.core_framework.base.IUiEffect
-import com.cecbrain.core_framework.base.IUiIntent
-import com.cecbrain.core_framework.base.IUiState
-import com.cecbrain.core_framework.base.PageStatus
+
+import com.cecbrain.common.base.IUiEffect
+import com.cecbrain.common.base.IUiIntent
+import com.cecbrain.common.base.IUiState
+import com.cecbrain.common.model.AppResult
 import java.util.UUID
 
 data class TodoItem(
@@ -15,7 +16,7 @@ data class TodoItem(
 data class TodoState(
     val todoList: List<TodoItem> = emptyList(),
     val inputText: String = "",
-    val pageStatus: PageStatus = PageStatus.Loading
+    val pageStatus: AppResult<TodoItem> = AppResult.Loading
 ) : IUiState
 
 
@@ -27,6 +28,6 @@ sealed class TodoIntent : IUiIntent {
     data object FetchTodoList : TodoIntent() // 联网获取列表
 }
 
-sealed class TodoEffect:IUiEffect {
+sealed class TodoEffect: IUiEffect {
     data class ShowToast(val message: String) : TodoEffect() // 显示提示
 }
